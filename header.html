@@ -1,0 +1,156 @@
+<header>
+  <nav class="navbar navbar-expand-lg header justify-content-center">
+    <div (mouseover)="displayCareersContent = false;
+         displayAboutContent = false; displayShippingMenu= false; displayProfileOptions= false; displayAccountName= false;"
+         class="navbar-brand d-flex w-25 mr-auto p-0 justify-content-start" >
+      <!--      <img src="../../../../assets/images/CCFS%20Flat%20logo.svg" style="height: 52px; width: 340px; margin-left: -28px"-->
+      <!--           class="d-flex justify-content-start img-logo-ccfs"/>-->
+      <div #logoContainer class="row logo-container justify-content-center" style="cursor: pointer" (click)="routeToHome()"></div>
+      <!--      <div class="svg bg-white" [innerHTML]="svg" ></div>-->
+    </div>
+    <button aria-controls="collapsingNavbar3" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+            data-target="#collapsingNavbar3" data-toggle="collapse" type="button">
+      <span class="navbar-toggler-icon text-white">
+        <img src="../../../../assets/icons/menu.svg" style="height: 30px; width: 20px"/>
+        <!--        <div class="svg bg-white" [innerHTML]="svg" style="height: 52px; width: 340px; margin-left: -28px"></div>-->
+      </span>
+    </button>
+    <div class="navbar-collapse collapse w-100 text-white collapse-drawer" id="collapsingNavbar3">
+      <div style="width: 619px" (mouseover)="displayCareersContent = false;
+         displayAboutContent = false; displayShippingMenu= false; displayProfileOptions= false; displayAccountName= false;"> &nbsp;</div>
+      <ul class="navbar-nav w-100 justify-content-center text-white header__nav">
+        <li class="nav-item dropdown">
+          <a (mouseover)="displayShippingMenu = true; displayAboutContent= false; displayProfileOptions= false;" class="nav-link dropdown-toggle hover-color-gray"
+             data-toggle="dropdown">Shipping</a>
+          <ul (mouseleave)="displayShippingMenu = false" (mouseover)="displayShippingMenu = true" *ngIf="displayShippingMenu"
+              class=" mega-menu">
+            <div class="row d-flex justify-content-start" style="width: 100%; margin-left: 0px">
+              <div (mouseover)="displayShippingMenu = true" class="col-md-4 p-0" style="border-right: 1px solid white;">
+                <ul class="p-0">
+                  <li class="nav-header"><h6 class="pl-0" style="border-bottom: 1px solid white">New Shipments</h6></li>
+                  <li><a [routerLink]="'/quote'" class="pl-3">Quote</a></li>
+                  <li><a [routerLink]="'/quick-pickup'" class="pl-3">Quick Pick Up</a></li>
+                  <li><a [routerLink]="'/shipment'" class="pl-3">Set Up Shipment</a></li>
+                  <li><a [routerLink]="'/address-book'" class="pl-3">Address Book</a></li>
+                </ul>
+              </div>
+              <div (mouseover)="displayShippingMenu = true" class="col-md-4 p-0" style="border-right: 1px solid white;">
+                <ul class="p-0">
+                  <li class="nav-header"><h6 class="pl-0" style="border-bottom: 1px solid white">Shipped</h6></li>
+                  <li><a [routerLink]="'/tracking'" class="pl-3">Track a Shipment</a></li>
+                  <li><a [routerLink]="'/shipping-history'" class="pl-3">Shipping History</a></li>
+                  <!--                  <li><a>Print Delivery Report</a></li>-->
+                  <li><a [routerLink]="'/setting-alert-reports'" class="pl-3">Email Alerts</a></li>
+                  <li><a (click)="redirectToForms()" class="pl-3">File a Claim</a></li>
+                </ul>
+              </div>
+              <div (mouseover)="displayShippingMenu = true" class="col-md-4 p-0">
+                <ul class="p-0">
+                  <li class="nav-header"><h6 class="pl-0" style="border-bottom: 1px solid white">Resources</h6></li>
+                  <li><a [routerLink]="'/transit'" class="pl-3">Transit Times</a></li>
+                  <li><a (click)="redirectToLocations()" class="pl-3">Locations</a></li>
+                  <li><a (click)="onXLSXtemClick('PointsList_xls')" class="pl-3">Points List XLS</a></li>
+                  <li><a (click)="onPDFItemClick('PointsList_pdf')" class="pl-3">Points List PDF</a></li>
+                  <li><a (click)="openDensity(content2)" class="pl-3">Density Calculator</a></li>
+                  <li><a (click)="onPDFItemClick('RulesTariff_pdf')" class="pl-3">Rules Tariff</a></li>
+                  <li><a (click)="onPDFItemClick('AccessorialCharges_pdf')" class="pl-3">Accessorial Charges</a></li>
+                  <li><a (click)="redirectToForms()" class="pl-3">Forms</a></li>
+                  <li><a (click)="redirectToFuelSurchage()" class="pl-3">Fuels Surcharge</a></li>
+                  <li><a (click)="redirectToHolidaySchedule()" class="pl-3">Holiday Schedule</a></li>
+                  <li><a (click)="redirectToDocument()" class="pl-3">API/EDI Documentation</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-100 d-flex justify-content-center pt-3 pb-3 mt-3"
+                 style="background: #202020; border-radius: 0 0 5px 5px">
+              <app-button [routerLink]="''" className="btn--flatRound" size="sm" type="dark">Shipping Portal
+              </app-button>
+            </div>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a (mouseover)="displayAboutContent = true; displayShippingMenu= false; displayCareersContent = false; displayProfileOptions= false;" class="nav-link dropdown-toggle hover-color-gray"
+             data-toggle="dropdown">About</a>
+          <ul (mouseover)="displayAboutContent = true;" *ngIf="displayAboutContent" class="custom-menu">
+            <div (mouseleave)="displayAboutContent = false" (mouseover)="displayAboutContent = true;"
+                 class="row d-flex justify-content-start" style="width: 100%; margin-left: 0px">
+              <ul class="p-0 w-100">
+                <li class="w-100 m-0"><a (click)="redirectToWhoWeAre()" class="pl-3 w-100">Who We Are</a></li>
+                <li class="w-100 m-0"><a (click)="redirectToLocations()" class="pl-3">Locations</a></li>
+                <li class="w-100 m-0"><a (click)="redirectToNews()" class="pl-3 w-100">News</a></li>
+              </ul>
+            </div>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a (mouseover)="displayCareersContent = true; displayAboutContent = false; displayProfileOptions= false;" class="nav-link dropdown-toggle hover-color-gray"
+             data-toggle="dropdown">Careers</a>
+          <ul (mouseover)="displayCareersContent = true;" *ngIf="displayCareersContent" class="custom-menu-careers">
+            <div (mouseleave)="displayCareersContent = false" (mouseover)="displayCareersContent = true;"
+                 class="row d-flex justify-content-start" style="width: 100%; margin-left: 0px">
+              <ul class="p-0 w-100">
+                <li class="w-100 m-0"><a (click)="redirectToOpenPosition()" class="pl-3 w-100">Open Positions</a></li>
+                <li class="w-100 m-0"><a (click)="redirectToWhyJoinUs()" class="pl-3 w-100">Why Join Us</a></li>
+              </ul>
+            </div>
+          </ul>
+        </li>
+        <li (mouseover)="displayCareersContent= false; displayAccountName= false; displayProfileOptions= false;"
+            class="nav-item ">
+          <a (click)="redirectToContacts()" class="nav-link hover-color-gray">Contacts</a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav ml-auto w-100 justify-content-end header__rightNav header__navRight d-flex" (mouseover)="displayShippingMenu = false; displayAboutContent = false; displayCareersContent = false;">
+        <li *ngIf="!displayAccDropdown" class="nav-item header__rightNav--accountName dropdown">
+          <a (mouseover)="displayAccountName = true; displayAboutContent = false; displayCareersContent = false; displayProfileOptions = false" class="nav-link dropdown-toggle hover-color-gray pl-3"
+             data-toggle="dropdown">
+            <span *ngIf="accountName" >{{accountName | slice:0:30 }}</span>
+            <span *ngIf="!accountName">Account Name</span>
+            <span class="border-account-name"><fa-icon [icon]="faCalendar"></fa-icon> </span></a>
+          <ul *ngIf="displayAccountName" class="custom-menu-right pl-0">
+            <div (mouseleave)="displayAccountName = false" (mouseover)="displayAccountName = true;"
+                 *ngIf="configList" class="row d-flex justify-content-end" style="width: 100%; margin-left: 0px">
+              <ul *ngFor="let list of configList; let i = index" class="p-0 pt-1 w-100 pb-1">
+                <li (click)="setActiveConfig(i)" [ngClass]="{'active': selectedIndex == i, 'list-group-item': true}"
+                    class="text-center"><a class="pl-2">{{list?.ClientName}}</a></li>
+              </ul>
+            </div>
+          </ul>
+        </li>
+        <li class="nav-item header__rightNav--profileIcon dropdown" style="padding-right: 117px;">
+          <a (mouseover)="displayProfileOptions = true; displayAboutContent = false; displayCareersContent = false; displayAccountName = false; " class="nav-link dropdown-toggle h-100 hover-color-gray " data-toggle="dropdown"
+             style="padding-top: 10px">
+            <img src="../../../../assets/icons/user-icon.svg"/>
+          </a>
+          <ul *ngIf="displayProfileOptions" [ngClass]="{'custom-menu-l' : !configId}"
+              class=" custom-menu mr-5" >
+            <div (mouseleave)="displayProfileOptions = false" (mouseover)="displayProfileOptions = true;"
+                 class="row d-flex justify-content-end" style="width: 100%; margin-left: 0px">
+              <ul class="p-1 w-100">
+                <!-- <li><a>User Profile</a></li>
+                <li><a>Change Password</a></li> -->
+
+                <!-- Options for login users -->
+                <li *ngIf="configId"><a (click)="editUserSetting()">Edit User Settings</a></li>
+                <li *ngIf="configId"><a (click)="logout()">Log Out</a></li>
+
+                <!-- Options for anonymous users -->
+                <li><a (click)="signIn()" *ngIf="!configId">Sign in</a></li>
+                <li><a (click)="register()" *ngIf="!configId">New to our online tools? Register here.</a></li>
+                <li><a (click)="requestAccount()" *ngIf="!configId">First time shipping with us? Request an Account.</a>
+                </li>
+              </ul>
+              <!--              <ul class="p-1">-->
+              <!--                <li><a>New to our online tool? Register Here</a></li>-->
+              <!--                <li><a>New to CrossCountry? Request and Account</a></li>-->
+              <!--              </ul>-->
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+<ng-template #content2 let-modal>
+  <app-density-calculator (closeEvent)="closeModal($event)"></app-density-calculator>
+</ng-template>

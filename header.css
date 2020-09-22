@@ -1,0 +1,591 @@
+::ng-deep {
+  .svg-inline--fa.fa-w-10 {
+    width: 20px;
+    height: 23px;
+    padding-top: 9px;
+  }
+}
+
+.navbar:focus {
+  outline: none;
+}
+
+.navbar:active {
+  outline: none;
+}
+
+.active {
+  background: #27AAE1;
+  border-radius: 0;
+}
+
+li {
+  background: transparent;
+  border: none;
+}
+::ng-deep{
+  .logo-container{
+    right:-25vw;
+    background: white;
+    transform:skew(-30deg);
+  }
+
+  .logo-container svg{
+    //background: linear-gradient(108deg, white 93%, #202020 25%);
+    padding: 10px;
+    height: 51px !important;
+    width: 255px !important;
+    margin-bottom: 1px;
+    transform: skew(30deg );
+  }
+}
+.bl:before{
+  content : "";
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 1px;
+  width   : 50%;  /* or 100px */
+  border-right:1px solid white;
+}
+
+.header {
+  padding: 0;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  color: #FFFFFF;
+  background: #202020;
+  //background: #202020 -webkit-linear-gradient(-31deg, #ffffff 14%, #202020 14%);
+  font-family: $font-family-roboto;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+  z-index: 2;
+
+  &__brand {
+    width: $header-brand-width;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    line-height: $header-height;
+    color: $netural-white;
+    font-weight: $font-weight-bold;
+  }
+
+  &__item {
+    text-align: center;
+    width: 20%;
+  }
+
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0%;
+
+    li {
+      display: inline-block;
+      margin: 0px $spacer*2;
+      padding: 0;
+
+      a {
+        text-align: left;
+        font: Regular 20px/24px Roboto;
+        letter-spacing: 0;
+        opacity: 1;
+        color: $netural-white;
+        display: block;
+
+        &:hover {
+          cursor: pointer;
+          background: #27AAE1;
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__navRight {
+    list-style: none;
+    padding: 0;
+    //margin: 0 0 0 10%;
+
+    li {
+      display: block;
+      //margin: 0px $spacer*1;
+      padding: 0;
+      text-align: left;
+
+      a {
+        text-align: left;
+        font: Regular 20px/24px Roboto;
+        letter-spacing: 0;
+        opacity: 1;
+        color: $netural-white;
+        display: block;
+
+        &:hover {
+          cursor: pointer;
+          background: #27AAE1;
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+
+  &__rightNav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 10%;
+
+    &--accountName {
+      line-height: 2;
+      font-size: 16px;
+      padding-top: 6px;
+      margin-right: 10px;
+      font: Regular 20px/24px Roboto;
+      font-size: 15px;
+    }
+
+    &--profileIcon {
+      font-size: 16px;
+      padding-top: 6px;
+      margin-right: 10px;
+
+    }
+  }
+}
+
+.mega-menu {
+  position: absolute;
+  z-index: 5;
+  width: 639px;
+  border-radius: 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  //padding-left: 26px;
+  //padding-right: 25px;
+  padding: 25px 0 0 0;
+
+  &__nav:hover {
+    background: $primary-light;
+  }
+
+}
+
+
+.mega-menu li {
+  display: inline-block;
+  float: left;
+  font-size: 0.94rem;
+  padding: 3px 0px;
+  width: 100%;
+  margin: 0;
+}
+
+.mega-menu li.mega-menu-column {
+  margin-right: 20px;
+  width: 150px;
+}
+
+.mega-menu .nav-header {
+  font-weight: $font-weight-light;
+  padding: 0 !important;
+  color: $netural-white;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 87%;
+  margin-left: 16px;
+}
+
+::ng-deep {
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+.custom-menu {
+  font-size: 0.94rem;
+  position: absolute;
+  z-index: 5;
+  padding: 10px 0 10px 0 !important;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+  width: 168px;
+}
+.custom-menu-l {
+  font-size: 0.94rem;
+  position: absolute;
+  z-index: 5;
+  padding: 10px 0 0 ! important;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+  width:24em;
+  right:-36%;
+}
+
+.custom-menu-careers {
+  font-size: 0.94rem;
+  position: absolute;
+  z-index: 5;
+  padding: 10px 0 10px 0 !important;
+  width: 182px;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.collapse-drawer {
+  background: #202020;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.border-account-name {
+  width: 20px;
+  border-radius: 5px;
+  border: 1px solid $netural-white;
+  margin: 5px;
+  padding: 2px;
+}
+
+.custom-menu-right {
+  width: 116% !important;
+  position: absolute;
+  z-index: 5;
+  //padding: 10px 29px 0 ! important;
+  //width: 261px;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.padding-icon {
+  padding-right: 117px;
+}
+
+.hover-color-gray:hover {
+  color: $netural-white !important;
+  background: #5b5d5e !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .collapse-drawer {
+    height: fit-content;
+  }
+
+  .header__nav {
+    margin: 0;
+  }
+
+  .navbar-nav .nav-link {
+    text-align: center;
+  }
+  .custom-menu-right {
+    width: 100%;
+  }
+  .custom-menu-careers{
+    width: 100%;
+  }
+  .custom-menu {
+    width: 100%;
+  }
+  .custom-menu-right {
+    width: 100%;
+  }
+
+}
+.header {
+  padding: 0;
+  font-size: 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $header-height;
+  color: #FFFFFF;
+  background: #202020;
+  //background: #202020 -webkit-linear-gradient(-31deg, #ffffff 14%, #202020 14%);
+  font-family: $font-family-roboto;
+  box-shadow: 0px 3px 6px #00000029;
+  opacity: 1;
+  z-index: 2;
+
+  &__brand {
+    width: $header-brand-width;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    line-height: $header-height;
+    color: $netural-white;
+    font-weight: $font-weight-bold;
+  }
+
+  &__item {
+    text-align: center;
+    width: 20%;
+  }
+
+  &__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 0%;
+
+    li {
+      display: inline-block;
+      margin: 0px $spacer*2;
+      padding: 0;
+
+      a {
+        text-align: left;
+        font: Regular 20px/24px Roboto;
+        letter-spacing: 0;
+        opacity: 1;
+        color: $netural-white;
+        display: block;
+
+        &:hover {
+          cursor: pointer;
+          background: #27AAE1;
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  &__navRight {
+    list-style: none;
+    padding: 0;
+    //margin: 0 0 0 10%;
+
+    li {
+      display: block;
+      //margin: 0px $spacer*1;
+      padding: 0;
+      text-align: left;
+
+      a {
+        text-align: left;
+        font: Regular 20px/24px Roboto;
+        letter-spacing: 0;
+        opacity: 1;
+        color: $netural-white;
+        display: block;
+
+        &:hover {
+          cursor: pointer;
+          background: #27AAE1;
+          color: #FFFFFF;
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+
+  &__rightNav {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0 10%;
+
+    &--accountName {
+      line-height: 2;
+      font-size: 16px;
+      padding-top: 6px;
+      margin-right: 10px;
+      font: Regular 20px/24px Roboto;
+      font-size: 15px;
+    }
+
+    &--profileIcon {
+      font-size: 16px;
+      padding-top: 6px;
+      margin-right: 10px;
+
+    }
+  }
+}
+
+.mega-menu {
+  position: absolute;
+  z-index: 5;
+  width: 639px;
+  border-radius: 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  //padding-left: 26px;
+  //padding-right: 25px;
+  padding: 25px 0 0 0;
+
+  &__nav:hover {
+    background: $primary-light;
+  }
+
+}
+
+
+.mega-menu li {
+  display: inline-block;
+  float: left;
+  font-size: 0.94rem;
+  padding: 3px 0px;
+  width: 100%;
+  margin: 0;
+}
+
+.mega-menu li.mega-menu-column {
+  margin-right: 20px;
+  width: 150px;
+}
+
+.mega-menu .nav-header {
+  font-weight: $font-weight-light;
+  padding: 0 !important;
+  color: $netural-white;
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 87%;
+  margin-left: 16px;
+}
+
+::ng-deep {
+  .dropdown-toggle::after {
+    display: none;
+  }
+}
+
+.custom-menu {
+  font-size: 0.94rem;
+  position: absolute;
+  z-index: 5;
+  padding: 10px 0 10px 0 !important;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+  width: 168px;
+}
+.custom-menu-l {
+  font-size: 0.94rem;
+  position: absolute;
+  z-index: 5;
+  padding: 10px 0 0 ! important;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+  width:24em;
+  right:-36%;
+}
+
+.custom-menu-careers {
+  font-size: 0.94rem;
+  position: absolute;
+  z-index: 5;
+  padding: 10px 0 10px 0 !important;
+  width: 182px;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.collapse-drawer {
+  background: #202020;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.border-account-name {
+  width: 20px;
+  border-radius: 5px;
+  border: 1px solid $netural-white;
+  margin: 5px;
+  padding: 2px;
+}
+
+.custom-menu-right {
+  width: 116% !important;
+  position: absolute;
+  z-index: 5;
+  //padding: 10px 29px 0 ! important;
+  //width: 261px;
+  border-radius: 0 0 5px 5px;
+  margin-top: 0;
+  background: $gray-700;
+  list-style: none;
+  text-align: left;
+  color: #FFFFFF;
+}
+
+.padding-icon {
+  padding-right: 117px;
+}
+
+.hover-color-gray:hover {
+  color: $netural-white !important;
+  background: #5b5d5e !important;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .collapse-drawer {
+    height: fit-content;
+  }
+
+  .header__nav {
+    margin: 0;
+  }
+
+  .navbar-nav .nav-link {
+    text-align: center;
+  }
+  .custom-menu-right {
+    width: 100%;
+  }
+  .custom-menu-careers{
+    width: 100%;
+  }
+  .custom-menu {
+    width: 100%;
+  }
+  .custom-menu-right {
+    width: 100%;
+  }
+
+}
